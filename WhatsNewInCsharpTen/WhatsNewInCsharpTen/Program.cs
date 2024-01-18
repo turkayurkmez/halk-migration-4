@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System.Runtime.CompilerServices;
 using WhatsNewInCsharpTen;
 
 Console.WriteLine("Hello, World!");
@@ -56,4 +57,87 @@ var employee = employees.Where(e => e.Address == sample).First();
 Console.WriteLine($"Bu adres, {employee.Name} isimli kişiye ait.");
 
 
+#endregion
+
+#region Property Pattern genişletildi
+
+
+object anotherEmployee = new Employee
+{
+    Name = "Ferdi Kaya",
+    Address = new Address("", "", "Ankara")
+};
+
+if (anotherEmployee is Employee { Address: { City: "Ankara" } })
+{
+    Console.WriteLine(((Employee)anotherEmployee).Name);
+}
+
+if (anotherEmployee is Employee { Address.City: "Ankara" })
+{
+    Console.WriteLine(((Employee)anotherEmployee).Name);
+
+}
+
+#endregion
+
+#region Caller Expression Attribute
+Console.WriteLine("Caller Expression Demo:");
+void LogCondition(bool condition, [CallerArgumentExpression("condition")] string? message = null)
+{
+    Console.WriteLine($"Gönderilen koşul: {message} -> {condition}");
+}
+
+LogCondition(true);
+int number = 8;
+bool isSuccess = true;
+LogCondition(number > 4);
+LogCondition(number < 7);
+LogCondition(isSuccess);
+
+#endregion
+
+#region Methodic exception handling
+Console.WriteLine("Ex. Handle demo");
+
+void checkAndUse(Employee employee)
+{
+    //if (employee is null)
+    //{
+    //    throw new ArgumentNullException();
+    //}
+    ArgumentNullException.ThrowIfNull(employee);
+
+}
+#endregion
+
+#region Tuple ve deconstruction
+Console.WriteLine("Tuple Demo");
+
+
+Tuple<int, int> divide(int number, int divisor)
+{
+    var tuple = Tuple.Create<int, int>(number / divisor, divisor % divisor);
+    return tuple;
+}
+
+var divideResult = divide(15, 2);
+Console.WriteLine($"Bölüm sonucu: {divideResult.Item1}");
+
+useTuple.divide(15, 3);
+
+int a;
+int b;
+
+(a, b) = (0, 1);
+(var q, var w) = (10, 5);
+(b, var z) = (-3, 25);
+
+(int, int) divideDcons(int number, int divisor)
+{
+    return (number / divisor, number % divisor);
+}
+
+var (sonuc, kalan) = divideDcons(15, 2);
+Console.WriteLine($"Sonuç: {sonuc}, kalan: {kalan}");
 #endregion

@@ -7,6 +7,6 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 	<ItemGroup>
-		<Using Remove="System.Reflection"/>
+		<Using Remove="System.Reflection" />
 	</ItemGroup>
 </Project>
