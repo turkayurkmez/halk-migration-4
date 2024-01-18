@@ -1,0 +1,66 @@
+[
+  {
+    "EventId": 0,
+    "LogLevel": "Information",
+    "Category": "FeaturesOfdotnetSix",
+    "Message": "Okunan de\u011Fer: Bu da production i\u00E7in!",
+    "State": {
+      "Message": "Okunan de\u011Fer: Bu da production i\u00E7in!",
+      "{OriginalFormat}": "Okunan de\u011Fer: Bu da production i\u00E7in!"
+    }
+  },
+  {
+    "EventId": 14,
+    "LogLevel": "Information",
+    "Category": "Microsoft.Hosting.Lifetime",
+    "Message": "Now listening on: https://localhost:7255",
+    "State": {
+      "Message": "Now listening on: https://localhost:7255",
+      "address": "https://localhost:7255",
+      "{OriginalFormat}": "Now listening on: {address}"
+    }
+  },
+  {
+    "EventId": 14,
+    "LogLevel": "Information",
+    "Category": "Microsoft.Hosting.Lifetime",
+    "Message": "Now listening on: http://localhost:5010",
+    "State": {
+      "Message": "Now listening on: http://localhost:5010",
+      "address": "http://localhost:5010",
+      "{OriginalFormat}": "Now listening on: {address}"
+    }
+  },
+  {
+    "EventId": 0,
+    "LogLevel": "Information",
+    "Category": "Microsoft.Hosting.Lifetime",
+    "Message": "Application started. Press Ctrl\u002BC to shut down.",
+    "State": {
+      "Message": "Application started. Press Ctrl\u002BC to shut down.",
+      "{OriginalFormat}": "Application started. Press Ctrl\u002BC to shut down."
+    }
+  },
+  {
+    "EventId": 0,
+    "LogLevel": "Information",
+    "Category": "Microsoft.Hosting.Lifetime",
+    "Message": "Hosting environment: Production",
+    "State": {
+      "Message": "Hosting environment: Production",
+      "envName": "Production",
+      "{OriginalFormat}": "Hosting environment: {envName}"
+    }
+  },
+  {
+    "EventId": 0,
+    "LogLevel": "Information",
+    "Category": "Microsoft.Hosting.Lifetime",
+    "Message": "Content root path: C:\\Users\\turka\\source\\repos\\Kurumsal\\Halkbank\\MigrateFromTwoVersions\\Group 4\\FeaturesOfdotnetSix\\FeaturesOfdotnetSix\\",
+    "State": {
+      "Message": "Content root path: C:\\Users\\turka\\source\\repos\\Kurumsal\\Halkbank\\MigrateFromTwoVersions\\Group 4\\FeaturesOfdotnetSix\\FeaturesOfdotnetSix\\",
+      "contentRoot": "C:\\Users\\turka\\source\\repos\\Kurumsal\\Halkbank\\MigrateFromTwoVersions\\Group 4\\FeaturesOfdotnetSix\\FeaturesOfdotnetSix\\",
+      "{OriginalFormat}": "Content root path: {contentRoot}"
+    }
+  }
+]

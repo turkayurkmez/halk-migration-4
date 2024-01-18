@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeaturesOfdotnetSix", "FeaturesOfdotnetSix\FeaturesOfdotnetSix.csproj", "{AC1CEDA4-2053-434B-8D57-C1B84C973AF6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC1CEDA4-2053-434B-8D57-C1B84C973AF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC1CEDA4-2053-434B-8D57-C1B84C973AF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC1CEDA4-2053-434B-8D57-C1B84C973AF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC1CEDA4-2053-434B-8D57-C1B84C973AF6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B90984C-F6CE-4147-B73D-7ED1EDD1C76E}
+	EndGlobalSection
+EndGlobal

@@ -141,3 +141,4 @@ int b;
 var (sonuc, kalan) = divideDcons(15, 2);
 Console.WriteLine($"Sonuç: {sonuc}, kalan: {kalan}");
 #endregion
+
