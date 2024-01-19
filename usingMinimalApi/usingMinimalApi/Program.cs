@@ -1,3 +1,5 @@
+﻿using usingMinimalApi;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,7 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//MapGet gibi endpoint tasarımlarında Delegate'in ProductService instance'ini parametre olarak alabilmesi için IoC'ye eklemelisiniz!
+builder.Services.AddSingleton<ProductService>();
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -16,28 +22,24 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
+app.MapGet("/products", (ProductService productService) =>
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+    return productService.GetProducts();
+});
 
-app.MapGet("/weatherforecast", () =>
+app.MapGet("/products/search/{name}", (ProductService productService, string name) => productService.SearchByName(name));
+
+app.MapGet("/products/{id}", (ProductService productService, int id) => productService.GetById(id));
+
+app.MapPost("/products", (ProductService productService, CreateProductRequest request) =>
 {
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateTime.Now.AddDays(index),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+    int id = productService.Create(request);
+    return Results.Created($"/products/{id}", request);
+});
+
+
+var productService = app.Services.GetRequiredService<ProductService>();
 
 app.Run();
 
-internal record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
+
