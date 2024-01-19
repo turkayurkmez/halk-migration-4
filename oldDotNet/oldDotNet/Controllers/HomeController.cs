@@ -1,25 +1,25 @@
-﻿using FeaturesOfdotnetSix.Models;
-using FeaturesOfdotnetSix.Services;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using oldDotNet.Models;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace FeaturesOfdotnetSix.Controllers
+namespace oldDotNet.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IEmailService emailService;
 
-        public HomeController(ILogger<HomeController> logger, IEmailService emailService)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            this.emailService = emailService;
         }
 
         public IActionResult Index()
         {
-            _logger.LogInformation($"Home.Index çalıştı.");
-            ViewBag.Title = "Burası anasayfa";
             return View();
         }
 
